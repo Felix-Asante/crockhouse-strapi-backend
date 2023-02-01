@@ -33,9 +33,9 @@ module.exports = ({ env }) => ({
         apiKey: env("SENDGRID_API_KEY"),
       },
       settings: {
-        defaultFrom: "webdevwithfelix@gmail.com",
-        defaultReplyTo: "webdevwithfelix@gmail.com",
-        testAddress: "quamzgraphix@gmail.com",
+        defaultFrom: env("EMAIL_SENDER"),
+        defaultReplyTo: env("EMAIL_SENDER"),
+        testAddress: env("EMAIL_TEST_ADDRESS"),
       },
     },
   },
