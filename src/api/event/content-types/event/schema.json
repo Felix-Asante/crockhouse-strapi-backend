@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "stop_date": {
+      "type": "date"
+    },
+    "location": {
+      "type": "json"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "events"
+    },
+    "event_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event-category.event-category"
+    },
+    "flyer": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "organizer_name": {
+      "type": "string"
+    },
+    "organizer_email": {
+      "type": "string"
+    },
+    "tickets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ticket.ticket",
+      "mappedBy": "event"
+    },
+    "organizer_phone": {
+      "type": "string"
+    },
+    "stop_time": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "sales": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sale.sale",
+      "mappedBy": "event"
+    }
+  }
+}

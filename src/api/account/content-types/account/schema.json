@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accounts",
+  "info": {
+    "singularName": "account",
+    "pluralName": "accounts",
+    "displayName": "accounts",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "provider": {
+      "type": "string",
+      "required": true
+    },
+    "account_number": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 13
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "account"
+    },
+    "account_holder_name": {
+      "type": "string"
+    }
+  }
+}
