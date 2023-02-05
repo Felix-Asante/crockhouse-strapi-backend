@@ -14,17 +14,7 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  slugify: {
-    enabled: true,
-    config: {
-      contentTypes: {
-        event: {
-          field: "slug",
-          references: "name",
-        },
-      },
-    },
-  },
+
   slugify: {
     enabled: true,
     config: {
@@ -32,6 +22,10 @@ module.exports = ({ env }) => ({
         blog: {
           field: "slug",
           references: "title",
+        },
+        event: {
+          field: "slug",
+          references: "name",
         },
       },
     },
