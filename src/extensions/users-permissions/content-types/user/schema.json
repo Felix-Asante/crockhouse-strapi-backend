@@ -99,6 +99,10 @@
     },
     "secondaryMobileNumber": {
       "type": "string"
+    },
+    "balance": {
+      "type": "string",
+      "default": "0"
     }
   }
 }
